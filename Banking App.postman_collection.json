@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "73fd27e5-5744-49f3-9171-7b3dc3754bc9",
+		"name": "Banking App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18965324"
+	},
+	"item": [
+		{
+			"name": "User Requests",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user1\",\r\n    \"password\": \"sifre1\",\r\n    \"email\": \"abc@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user1\",\r\n    \"password\": \"sifre1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/users/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account Requests",
+			"item": [
+				{
+					"name": "Create Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImF1dGgiOiJnZXJla2lyc2UgY2xhaW0gdmFyIiwiaWF0IjoxNzA5MDY1Njc3LCJleHAiOjE3MDkwNjkyNzd9.IIeK2_ydIB742hYguTmD82rOyC5rojXPregPijnmOL8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"account3Name\",\r\n    \"number\": \"account3Number\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/accounts"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImF1dGgiOiJnZXJla2lyc2UgY2xhaW0gdmFyIiwiaWF0IjoxNzA4OTUzNjI5LCJleHAiOjE3MDg5NTcyMjl9.bNtpjAt08nMoURSx2prrwMhvc5w7G3_khuwv6t_njxI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/accounts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "account2Number",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "account2Name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/accounts/78694ba9-0bc2-47b2-af80-45d2914cefe6?name=updatedName1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"accounts",
+								"78694ba9-0bc2-47b2-af80-45d2914cefe6"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "updatedName1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/accounts/78694ba9-0bc2-47b2-af80-45d2914cefe6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"accounts",
+								"78694ba9-0bc2-47b2-af80-45d2914cefe6"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
